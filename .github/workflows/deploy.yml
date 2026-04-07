@@ -12,14 +12,17 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: Install and Build
         run: |
           node --version
           npm --version
-          npm install
-          npm run build
+          npm install 2>&1
+          npm run build 2>&1
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
