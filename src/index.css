@@ -1,8 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.editor-textarea {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-  tab-size: 2;
-}
